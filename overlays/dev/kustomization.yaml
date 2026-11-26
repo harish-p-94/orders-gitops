@@ -3,6 +3,9 @@ kind: Kustomization
 namespace: app-dev
 resources:
 - ../../base
+- db-migration-job.yaml
+patches:
+- path: wave-patches.yaml
 replicas:
 - name: web-app
   count: 1
